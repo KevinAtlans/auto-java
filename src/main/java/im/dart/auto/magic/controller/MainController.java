@@ -47,6 +47,9 @@ public class MainController {
         if (Checker.isEmpty(res)) {
             return DartCode.EXEC_ERROR.result("Can not get any answer.");
         }
+        if (data.getJustContent()) {
+            return Result.of(res.getContent());
+        }
         return Result.of(res);
     }
 
@@ -68,6 +71,9 @@ public class MainController {
         ChatResponse res = new OpenAI(config.getKey(), config.getOrg(), null).chat(data.getContent(), UUID.ulid(), config.getModel());
         if (Checker.isEmpty(res)) {
             return DartCode.EXEC_ERROR.result("Can not get any answer.");
+        }
+        if (data.getJustContent()) {
+            return Result.of(res.getContent());
         }
         return Result.of(res);
     }

@@ -18,4 +18,5 @@ public class ChatData extends Base {
     private String org;
     private String model = "gpt-3.5-turbo";
     private String content;
+    private Boolean justContent = false;
 }
