@@ -1,0 +1,13 @@
+server:
+  address: 0.0.0.0
+  port: 8080
+  servlet:
+    context-path: /magic
+spring:
+  application:
+    name: magic
+config:
+  token: ${OPEN_TOKEN:你的Token}
+  model: ${OPEN_AI_MODEL:gpt-3.5-turbo}
+  key: ${OPEN_AI_KEY:你的Key}
+  org: ${OPEN_AI_ORG:你的Org}
