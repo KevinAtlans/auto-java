@@ -33,7 +33,7 @@ public class MainController {
     private HttpServletRequest request;
 
 
-    @GetMapping(value = {"/test"})
+    @RequestMapping(value = {"/test"}, method = {RequestMethod.GET, RequestMethod.POST}, consumes = {"*/*"})
     public Result test() {
         return Result.SUCCESS();
     }
